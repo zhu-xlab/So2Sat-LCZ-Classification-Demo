@@ -1,0 +1,88 @@
+<graph id="Graph">
+  <version>1.0</version>
+  <node id="Read">
+    <operator>Read</operator>
+    <sources/>
+    <parameters class="com.bc.ceres.binding.dom.XppDomElement">
+      <file>E:\So2Sat\data\LCZ42_22606_Zurich\rangeAzimuth_nlm_dat\201706\S1B_IW_SLC__1SDV_20170602T053407_20170602T053434_005867_00A499_A351_Orb_Cal_Deb_Spk_Sub.dim</file>
+    </parameters>
+  </node>
+  <node id="Terrain-Correction">
+    <operator>Terrain-Correction</operator>
+    <sources>
+      <sourceProduct refid="Read"/>
+    </sources>
+    <parameters class="com.bc.ceres.binding.dom.XppDomElement">
+      <sourceBands/>
+      <demName>SRTM 3Sec</demName>
+      <externalDEMFile/>
+      <externalDEMNoDataValue>0.0</externalDEMNoDataValue>
+      <externalDEMApplyEGM>true</externalDEMApplyEGM>
+      <demResamplingMethod>NEAREST_NEIGHBOUR</demResamplingMethod>
+      <imgResamplingMethod>NEAREST_NEIGHBOUR</imgResamplingMethod>
+      <pixelSpacingInMeter>3.0</pixelSpacingInMeter>
+      <pixelSpacingInDegree>2.6949458523585646E-5</pixelSpacingInDegree>
+      <mapProjection>PROJCS[&quot;WGS 84 / UTM zone 32N&quot;, &#xd;
+  GEOGCS[&quot;WGS 84&quot;, &#xd;
+    DATUM[&quot;World Geodetic System 1984&quot;, &#xd;
+      SPHEROID[&quot;WGS 84&quot;, 6378137.0, 298.257223563, AUTHORITY[&quot;EPSG&quot;,&quot;7030&quot;]], &#xd;
+      AUTHORITY[&quot;EPSG&quot;,&quot;6326&quot;]], &#xd;
+    PRIMEM[&quot;Greenwich&quot;, 0.0, AUTHORITY[&quot;EPSG&quot;,&quot;8901&quot;]], &#xd;
+    UNIT[&quot;degree&quot;, 0.017453292519943295], &#xd;
+    AXIS[&quot;Geodetic longitude&quot;, EAST], &#xd;
+    AXIS[&quot;Geodetic latitude&quot;, NORTH], &#xd;
+    AUTHORITY[&quot;EPSG&quot;,&quot;4326&quot;]], &#xd;
+  PROJECTION[&quot;Transverse_Mercator&quot;], &#xd;
+  PARAMETER[&quot;central_meridian&quot;, 9.0], &#xd;
+  PARAMETER[&quot;latitude_of_origin&quot;, 0.0], &#xd;
+  PARAMETER[&quot;scale_factor&quot;, 0.9996], &#xd;
+  PARAMETER[&quot;false_easting&quot;, 500000.0], &#xd;
+  PARAMETER[&quot;false_northing&quot;, 0.0], &#xd;
+  UNIT[&quot;m&quot;, 1.0], &#xd;
+  AXIS[&quot;Easting&quot;, EAST], &#xd;
+  AXIS[&quot;Northing&quot;, NORTH], &#xd;
+  AUTHORITY[&quot;EPSG&quot;,&quot;32632&quot;]]</mapProjection>
+      <alignToStandardGrid>false</alignToStandardGrid>
+      <standardGridOriginX>0.0</standardGridOriginX>
+      <standardGridOriginY>0.0</standardGridOriginY>
+      <nodataValueAtSea>false</nodataValueAtSea>
+      <saveDEM>false</saveDEM>
+      <saveLatLon>false</saveLatLon>
+      <saveIncidenceAngleFromEllipsoid>false</saveIncidenceAngleFromEllipsoid>
+      <saveLocalIncidenceAngle>false</saveLocalIncidenceAngle>
+      <saveProjectedLocalIncidenceAngle>false</saveProjectedLocalIncidenceAngle>
+      <saveSelectedSourceBand>true</saveSelectedSourceBand>
+      <outputComplex>true</outputComplex>
+      <applyRadiometricNormalization>false</applyRadiometricNormalization>
+      <saveSigmaNought>false</saveSigmaNought>
+      <saveGammaNought>false</saveGammaNought>
+      <saveBetaNought>false</saveBetaNought>
+      <incidenceAngleForSigma0>Use projected local incidence angle from DEM</incidenceAngleForSigma0>
+      <incidenceAngleForGamma0>Use projected local incidence angle from DEM</incidenceAngleForGamma0>
+      <auxFile>Latest Auxiliary File</auxFile>
+      <externalAuxFile/>
+    </parameters>
+  </node>
+  <node id="Write">
+    <operator>Write</operator>
+    <sources>
+      <sourceProduct refid="Terrain-Correction"/>
+    </sources>
+    <parameters class="com.bc.ceres.binding.dom.XppDomElement">
+      <file>E:\So2Sat\data\LCZ42_22606_Zurich\S1B_IW_SLC__1SDV_20170602T053407_20170602T053434_005867_00A499_A351_Orb_Cal_Deb_Spk_Sub_TC.dim</file>
+      <formatName>GeoTIFF-BigTIFF</formatName>
+    </parameters>
+  </node>
+  <applicationData id="Presentation">
+    <Description/>
+    <node id="Read">
+            <displayPosition x="124.0" y="121.0"/>
+    </node>
+    <node id="Terrain-Correction">
+      <displayPosition x="193.0" y="171.0"/>
+    </node>
+    <node id="Write">
+            <displayPosition x="306.0" y="220.0"/>
+    </node>
+  </applicationData>
+</graph>
