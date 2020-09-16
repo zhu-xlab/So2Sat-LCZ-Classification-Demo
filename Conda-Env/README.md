@@ -18,4 +18,7 @@
 1. activate original env: 	source activate sipeo_so2sat_demo
 2. generate .yml file: 		conda env export > sipeo_so2sat_demo_env.yml
 
+3. create the identical env: 	conda env create -f sipeo_so2sat_demo_env.yml (change the first line of .yml file to change env name)
+4. check installation: 		conda env list
+
 

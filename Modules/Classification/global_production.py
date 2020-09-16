@@ -21,7 +21,7 @@ import os
 import sys
 import time
 import logging
-import tensorflow as tf
+# import tensorflow as tf
 import numpy as np
 import sen1_cnntrain_uil as sen1cnn
 import sen1_production_uil as gp
@@ -29,20 +29,16 @@ import sen1_production_uil as gp
 
 # supress warning messages like SSE4.1, AVX, etc.
 os.environ['TF_CPP_MIN_LOG_LEVEL']='1'
-#config = tf.ConfigProto()
-#config.gpu_options.allow_growth = True
-#session = tf.Session(config=config)
-
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
-#os.environ["CUDA_VISIBLE_DEVICES"]="0"
+os.environ["CUDA_VISIBLE_DEVICES"]="0"
 os.environ["TF_ENABLE_AUTO_MIXED_PRECISION"] = "1"
-config = tf.ConfigProto()
-#config.gpu_options.per_process_gpu_memory_fraction = 0.5
-config.gpu_options.allow_growth = True
-session = tf.Session(config=config)
+
+# config = tf.config.experimental()
+# config.gpu_options.per_process_gpu_memory_fraction = 0.5
+# config.gpu_options.allow_growth = True
+# session = tf.Session(config=config)
 
 
-import tensorflow as tf
 import net_resnet_large_window
 import resnet_v2
 from keras.optimizers import Nadam
@@ -120,7 +116,7 @@ try:
         out.write("0")
     #print('Write OK file finished')
 
-except RuntimeError, e:
+except RuntimeError:
     print('ERROR:   Error in writing OK.lcz_classification.')
     print(e)
 
