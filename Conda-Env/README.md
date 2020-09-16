@@ -14,4 +14,8 @@
 
 
 
+# Recreate an identical conda env with .yml file
+1. activate original env: 	source activate sipeo_so2sat_demo
+2. generate .yml file: 		conda env export > sipeo_so2sat_demo_env.yml
+
 
