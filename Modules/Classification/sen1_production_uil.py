@@ -56,7 +56,7 @@ def saveProbabilityPrediction(probPred,tiffPath):
     # save file with int zeros
     idBnd = np.arange(0,bnd,dtype=int)
     for idxBnd in idBnd:
-        outBand = LCZFile.GetRasterBand(idxBnd+1)
+        outBand = LCZFile.GetRasterBand(int(idxBnd+1))
         outBand.WriteArray(prob[idxBnd,:,:].astype(np.int16))
         outBand.FlushCache()
         del(outBand)
@@ -139,7 +139,7 @@ def getPatch(data,imageCoord,patchsize):
 
     imageCoord = imageCoord + halfPatchSize
 
-    print 'INFO:    Array size: ' + str(imageCoord.shape[0]) + ',' + str(patchsize) + ',' + str(patchsize) + ',' + str(data.shape[0])
+    print('INFO:    Array size: ' + str(imageCoord.shape[0]) + ',' + str(patchsize) + ',' + str(patchsize) + ',' + str(data.shape[0]))
     dataPatch = np.zeros((imageCoord.shape[0],patchsize,patchsize,data.shape[0]),dtype=float)
 
     for i in range(0,imageCoord.shape[0]):
@@ -288,7 +288,7 @@ def initialLCZGrids(tiffData):
     LCZLabel = np.zeros((LCZRow,LCZCol))
     idBnd = np.arange(0,nbBnd,dtype=int)
     for idxBnd in idBnd:
-        outBand = LCZFile.GetRasterBand(idxBnd+1)
+        outBand = LCZFile.GetRasterBand(int(idxBnd+1))
         outBand.WriteArray(LCZLabel)
         outBand.FlushCache()
         del(outBand)
@@ -382,7 +382,7 @@ def initialLCZProbGrid(tiffData,outGridDir):
     nbBnd = 17
     idBnd = np.arange(0,nbBnd,dtype=int)
     for idxBnd in idBnd:
-        outBand = LCZFile.GetRasterBand(idxBnd+1)
+        outBand = LCZFile.GetRasterBand(int(idxBnd+1))
         outBand.WriteArray(LCZProb)
         outBand.FlushCache()
         del(outBand)

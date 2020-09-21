@@ -1,7 +1,12 @@
-
 # Sentinel-1 part
 # produce a classification map with trained model for Sentinel-1 data
 global_production.py ../../data/Sentinel-1/00331_204371_Munich model/S1_RESNET20_BS32_LR1e-4_IN32-32-7_PRO52A-R10-GLOBAL_2019_06_22.h5
+
+# set up environment
+keras:          conda install -c conda-forge keras
+
+# produce a classification map for city 00331_204371_Munich with trained model
+python global_production.py ../../data/Sentinel-1/00331_204371_Munich model/S1_RESNET20_BS32_LR1e-4_IN32-32-7_PRO52A-R10-GLOBAL_2019_06_22.h5
 
 
 
@@ -27,4 +32,10 @@ The softmax probability of each season and the fused LCZ labels are saved into g
 # Usage
 
 - `CUDA_VISIBLE_DEVICES=0 python sen2InferenceResNet20.py 'sampleData_So2Sat-LCZ-Classification-Demo/00017_22007_Lagos' 'sampleData_So2Sat-LCZ-Classification-Demo/S2_RESNET20_BS16_LR2e-4_IN32-32-10_PRO-52-0R12_2019-06-27T10:16:53+02:00.hdf5'`
->>>>>>> 2b67954b59da2abcfa881a24b78ea2d80d035566
+
+
+
+
+
+
+
