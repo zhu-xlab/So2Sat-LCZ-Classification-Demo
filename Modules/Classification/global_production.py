@@ -92,7 +92,7 @@ dataPatches = gp.getPatch(dataFeature,coordImage,patchsize)
 
 # 3. loading trained CNN and predict label
 #model = net_resnet_large_window.build_model(patch_shape, nb_classes = 17 , start_ch = 16, depth = 4, inc_rate = 2, nb_skipped = 2, activation = 'relu')
-model = resnet_v2.resnet_v2(input_shape=patch_shape,depth=20, num_classes = 17)
+model = resnet_v2.resnet_v2_s1(input_shape=patch_shape,depth=20, num_classes = 17)
 timeStart = time.time()
 model.load_weights(path2NetModel)
 timeEnd = time.time()
