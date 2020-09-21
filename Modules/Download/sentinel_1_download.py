@@ -14,7 +14,8 @@ import pandas as pd
 from sentinelsat.sentinel import SentinelAPI
 import sentinelsat
 print(sentinelsat.__file__)
-
+import xml.etree.ElementTree as ET
+import pandas as pd
 
 
 ###############################################################################
@@ -32,10 +33,9 @@ password='sipeo_so2sat'
 
 # directory to a file, which stores roi.kml or geotiff files of all cities
 # file structure: 'cityrois'/city/city_roi.kml. e.g. 'cityrois/zurich/zurich_roi.kml'
-cityrois = '../../data/ROI'
+cityrois = '../../data/ROI/UN_city_list_rect_buff.kml'
 # set the type of ROI file
-# roiType = 'geotiff' 
-roiType = 'kml' 
+roiType = 'kml_example'
 
 # time requirement
 # startDate = ["20170301","20170601","20170901"]
@@ -51,57 +51,39 @@ logging.basicConfig(filename=outdir+"/sentinel_1_download.log", level=logging.IN
 ###############################################################################
 
 
+# get the city list
+city_info = []
+tree = ET.parse(cityrois)
+root = tree.getroot()
+folder = root[0][1]
+for i in range(1,len(folder)):
+    city_info.append([folder[i][1][0][3].text, folder[i][1][0][0].text, folder[i][1][0][1].text, folder[i][1][0][2].text, folder[i][1][0][4].text, folder[i][2][0][0][0].text])
 
+# example city 
+cityname = ["00017_22007_Lagos"]
+example_city_code = '22007'
 
-
-
-# # get the city list
-cityname = glob.glob(cityrois+"/*")
-
-# cityname = 'sao_paulo'
 
 # loop over cities
-for city in cityname:
-    roi_path = city
-    city = city.split("/")[-1].split(".")[0]
+for idx_city in range(len(cityname)):
+    city = cityname[idx_city]
     ###############################################################################
     #
     #               read the region of interested ROI
     #
+    if roiType.lower()=='kml_example':
+        for loc in range(0,len(city_info)):
+            if city_info[loc][0] == example_city_code:
+                break
+    loc_tmp = city_info[loc][5].split(' ')
+    lon = []
+    lat = []
+    for loc_item in loc_tmp:
+        tmp = loc_item.split(',')
+        lon.append(float(tmp[0]))
+        lat.append(float(tmp[1]))
 
-    if roiType.lower() == 'kml':
-        # directory to the ROI.kml file
-        kmlpath = roi_path
-        # read footprint from roi kml for data searching
-        driver = ogr.GetDriverByName('kml')
-        kml = driver.Open(kmlpath)
-        kmllayer = kml.GetLayer();
-        coordinate = kmllayer.GetExtent()
-    elif roiType.lower()=='geotiff':
-        # directory to the ROI.kml file
-        tifpath = roi_path
-        tifdat = gdal.Open(tifpath)
-        ulx, xres, xskew, uly, yskew, yres  = tifdat.GetGeoTransform()
-        lrx = ulx + (tifdat.RasterXSize * xres)
-        lry = uly + (tifdat.RasterYSize * yres)
-        # Setup the source projection - you can also import from epsg, proj4...
-        source = osr.SpatialReference()
-        source.ImportFromWkt(tifdat.GetProjection())
-        # The target wgs84/lonlat projection
-        target = osr.SpatialReference()
-        target.ImportFromEPSG(4326)
-        # Create the transform - this can be used repeatedly
-        transform = osr.CoordinateTransformation(source, target)
-        # Transform the point. You can also create an ogr geometry and use the more generic `point.Transform()`
-        ul = transform.TransformPoint(ulx, uly)
-        lr = transform.TransformPoint(lrx, lry)
-        # ROI coordinates in WGS84/lonlat
-        coordinate = [ul[0],lr[0],lr[1],ul[1]]
-    else:
-        print('----------------- Wrong given ROI data type, only KML and GEOTIFF for now  ---------------------\n')
-        logging.info('----------------- Wrong given ROI data type, only KML and GEOTIFF for now  ---------------------\n')
-        break
-
+    coordinate = [min(lon),max(lon),min(lat),max(lon)]
     x_buffer = (coordinate[1]-coordinate[0])/10
     y_buffer = (coordinate[3]-coordinate[2])/10
     xmin = coordinate[0] - x_buffer
