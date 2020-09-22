@@ -15,10 +15,10 @@ python global_production.py ../../data/Sentinel-1/00331_204371_Munich model/S1_R
 LCZ classification from sentinel-2 images; multi-seasonal predictions are fused into one.
 The softmax probability of each season and the fused LCZ labels are saved into geotiff files.
 
-# Sample data and trained model
+## Sample data and trained model
 - sampleData_So2Sat-LCZ-Classification-Demo https://drive.google.com/drive/u/0/folders/1ihzlEzswR03fJoV0bn_yL4qYf5rQKtgX
 
-# Folder Structure
+## Folder Structure
   ```
   Classification/
   │
@@ -29,13 +29,6 @@ The softmax probability of each season and the fused LCZ labels are saved into g
   └──...
   ```
 
-# Usage
+## Usage
 
 - `CUDA_VISIBLE_DEVICES=0 python sen2InferenceResNet20.py 'sampleData_So2Sat-LCZ-Classification-Demo/00017_22007_Lagos' 'sampleData_So2Sat-LCZ-Classification-Demo/S2_RESNET20_BS16_LR2e-4_IN32-32-10_PRO-52-0R12_2019-06-27T10:16:53+02:00.hdf5'`
-
-
-
-
-
-
-
