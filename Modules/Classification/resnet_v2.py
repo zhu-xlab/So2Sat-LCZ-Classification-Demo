@@ -11,7 +11,7 @@ https://arxiv.org/pdf/1603.05027.pdf
 from __future__ import print_function
 import keras
 from keras.layers import Dense, Conv2D, BatchNormalization, Reshape, Activation, Permute, Lambda, Concatenate,GlobalAveragePooling2D
-from keras.layers import AveragePooling2D, Input, Flatten,CuDNNLSTM
+from keras.layers import AveragePooling2D, Input, Flatten
 from keras.optimizers import Adam
 from keras.callbacks import ModelCheckpoint, LearningRateScheduler
 from keras.callbacks import ReduceLROnPlateau

@@ -1,12 +1,9 @@
 # Sentinel-1 part
-# produce a classification map with trained model for Sentinel-1 data
-global_production.py ../../data/Sentinel-1/00331_204371_Munich model/S1_RESNET20_BS32_LR1e-4_IN32-32-7_PRO52A-R10-GLOBAL_2019_06_22.h5
-
 # set up environment
 keras:          conda install -c conda-forge keras
 
 # produce a classification map for city 00331_204371_Munich with trained model
-python global_production.py ../../data/Sentinel-1/00331_204371_Munich model/S1_RESNET20_BS32_LR1e-4_IN32-32-7_PRO52A-R10-GLOBAL_2019_06_22.h5
+python global_production.py ../../data/Sentinel-1/00017_22007_Lagos model/S1_RESNET20_BS32_LR1e-4_IN32-32-7_PRO52A-R10-GLOBAL_2019_06_22.h5
 
 
 
