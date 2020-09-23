@@ -390,7 +390,6 @@ def getRegion(cpath,kmlCityList):
     
     # convert geographic coordinate into WGS 84 / UTM zone coordinate
     points,_ = latlon2utm(points)
-    print points
     widHei = np.round((points[1]-points[0])/res)
     widHei = widHei.astype(int)
     region = '0,0,'+str(widHei[0])+','+str(widHei[1])
@@ -409,8 +408,8 @@ def getPathOfCity(dpath):
         temp = cityPath[i].split('/')[-1].split('_')
         i = i + 1
         if not os.path.isdir(cpath) or len(temp)!=3:
-            print cpath
-            print 'The directory is either not a directory, or is not named in standard. And it has been removed'
+            print(cpath)
+            print('The directory is either not a directory, or is not named in standard. And it has been removed')
             cityPath.remove(cpath)
             i = i - 1            
     return cityPath
@@ -670,11 +669,10 @@ def readSEN1TIFF2NLSAR(path):
 # path = '/datastore/DATA/classification/SEN1/LCZ42_SEN1/LCZ42_22606_Zurich/rangeAzimuth_dat/201706/S1B_IW_SLC__1SDV_20170602T053407_20170602T053434_005867_00A499_A351_rangeAzimuth.tif'
     try:
         tifID = gdal.Open(path)
-    except RuntimeError, e:
+    except RuntimeError:
         print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
         print("ERROR:           the given SENTINEL-1 geotiff can not be open by GDAL")
         print("DIRECTORY:       "+path)
-        print("GDAL EXCEPCTION: "+e)
         print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
         sys.exit(1)
 

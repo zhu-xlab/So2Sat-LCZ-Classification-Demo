@@ -48,7 +48,6 @@ elif 'KML' in settings:
     geoInfoFlag = 2
 
 
-print settings
 
 print('procFlag: '+str(procFlag))
 print('projFlag: '+str(projFlag))
