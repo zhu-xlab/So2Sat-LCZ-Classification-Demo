@@ -11,10 +11,11 @@ import os
 import osr
 import gdal
 import numpy as np
+import sys
+sys.path.insert(1, '../Classification')
+
 import sen1_cnntrain_uil as sen1cnn
 import glob2
-import sys
-
 """
 1. inputs:
 	- path2Sen1OfCity		-- the directory to the sentinel-1 data of the city under processing
