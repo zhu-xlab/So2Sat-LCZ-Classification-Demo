@@ -1,37 +1,13 @@
-* data
+# So2Sat LCZ Classification Demo
+This repository provides a demo that produces local climate zone classification maps using Sentinel-1 and Sentinel-2 data. This is a part of an European Research Council (ERC) starting grand project "So2Sat" [So2Sat page](http://www.so2sat.eu/).
 
-  > Sentinel-1
-  >
-  > Sentinel-2
-  >
-  > MAP
-  >
-  > > Sentinel-1
-  > >
-  > > Sentinel-2
-  > >
-  > > Fusion
-  >
-  > ROI
+# Quick introduction
+## Environment setting
+In directory "Conda-Env", it provides detailed instructions and necessary materials for setting up a conda environment
 
-* src
+## Workflow
+The workflow of this demo consists of data downloading, data preprocessing, classification with trained model, and decision fusion. These four modules are in the directory "Modules"
 
-  > Geo-Processing
-  >
-  > S1-Processing
-  >
-  > S2-Processing
-  >
-  > Classification
+## Data
+The "Data" directory includes a folder structure that used in this demo. In cooresponding locations of this folder structure, we provide links to data examples.
 
-* Modules
-
-  > Download
-  >
-  > Pre-processing
-  >
-  > Classification
-  >
-  > Fusion
-
-* Conda-Env
