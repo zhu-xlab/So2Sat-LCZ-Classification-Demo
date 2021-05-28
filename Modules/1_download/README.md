@@ -1,13 +1,4 @@
-The script "sentinel_1_download.py" downloads sentinel-1 data automatically.
+# Data download
+The script "sentinel_1_download.py" downloads sentinel-1 level-1 SLC IW (VV-VH) product automatically, based on the python API sentinelsat, from sentinel data hub. 
 
-Inputs:
-	- roi files:	--"kml" or "tiff" files, save in '/data/ROI'
-	- others: 	-- various inputs setting: line 20 to line 50
-
-Outputs:
-	- S1 data	-- data saved in /data/Sentinel-1/, set by "outdir"
-
-
-Run the download:
-source activate sipeo_so2sat_demo
-python sentinel_1_download.py
+If one runs "sentinel_1_download.py" directly, it downloads data for city Lagos and Chengdu as examples. The downloaded data will be saved in "../../data/Sentinel-1/". If the required data tile is not online, this script retrieves the data and attempts downloading again 20 minutes later.
