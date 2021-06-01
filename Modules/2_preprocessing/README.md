@@ -1,13 +1,19 @@
 # Sentinel-1 Preprocessing
 ## Simple running
 sentinel_1_processing.py runs a Sentinel-1 data preprocessing pipeline by calling graphic processing tool (gpt) of ESA SNAP toolbox. It delivers two data images. One has speckle, the other one had speckle reduction with LEE filter. The processing chains are as follows:
-Apply orbit file, calibration, deburst, terrain correction, roi cropping, and mosaic (if necessary)
-Apply orbit file, calibration, deburst, Lee filtering, terrain correction, roi cropping, and mosaic (if necessary)
+
+"Apply orbit file, calibration, deburst, terrain correction, roi cropping, and mosaic (if necessary)"
+
+"Apply orbit file, calibration, deburst, Lee filtering, terrain correction, roi cropping, and mosaic (if necessary)"
 
 This script basically calls the following functions:
+
 python geocoding_core.py ../../data/Sentinel-1/00017_22007_Lagos templates/gpt_template_preprocessing_lee_KML_UTM.xml UN_city_list_rect_buff.kml
+
 python geocoding_core.py ../../data/Sentinel-1/00017_22007_Lagos templates/gpt_template_preprocessing_unfilt_KML_UTM.xml  UN_city_list_rect_buff.kml 
+
 python mosaic_core.py ../../data/Sentinel-1/00017_22007_Lagos gpt_template_preprocessing_lee_KML_UTM.xml UN_city_list_rect_buff.kml
+
 python mosaic_core.py ../../data/Sentinel-1/00017_22007_Lagos gpt_template_preprocessing_unfilt_KML_UTM.xml UN_city_list_rect_buff.kml
 
 ## Issue of accessing orbit file
