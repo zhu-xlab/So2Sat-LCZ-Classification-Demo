@@ -4,12 +4,18 @@
 
 Before running, one needs to install ESA SNAP toolbox and set the directory to ESA SNAP GPT at line 10 of "sentinel_1_processing.py"
 
+## Processing pipeline
 It runs a Sentinel-1 data preprocessing pipeline by calling graphic processing tool (gpt) of ESA SNAP toolbox. It delivers two data images. One has speckle, the other one had speckle reduction with LEE filter. The processing chains are as follows:
 
 "Apply orbit file, calibration, deburst, terrain correction, roi cropping, and mosaic (if necessary)"
 
 "Apply orbit file, calibration, deburst, Lee filtering, terrain correction, roi cropping, and mosaic (if necessary)"
 
+Details about the processing can be find in the following paper. Figure 4 in it provides a visualization.
+
+> Hu, Jingliang, Pedram Ghamisi, and Xiao Xiang Zhu. "Feature extraction and selection of sentinel-1 dual-pol data for global-scale local climate zone classification." ISPRS International Journal of Geo-Information 7.9 (2018): 379.
+
+## What does sentinel_1_processing.py do
 This script basically calls the following functions:
 
 python geocoding_core.py ../../data/Sentinel-1/00017_22007_Lagos templates/gpt_template_preprocessing_lee_KML_UTM.xml UN_city_list_rect_buff.kml
