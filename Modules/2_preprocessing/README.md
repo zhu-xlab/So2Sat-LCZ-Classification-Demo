@@ -1,21 +1,16 @@
 # Sentinel-1 Preprocessing
 ## Simple running
 sentinel_1_processing.py runs a Sentinel-1 data preprocessing pipeline by calling graphic processing tool (gpt) of ESA SNAP toolbox. It delivers two data images. One has speckle, the other one had speckle reduction with LEE filter. The processing chains are as follows:
-
 Apply orbit file, calibration, deburst, terrain correction, roi cropping, and mosaic (if necessary)
-
 Apply orbit file, calibration, deburst, Lee filtering, terrain correction, roi cropping, and mosaic (if necessary)
 
 This script basically calls the following functions:
 python geocoding_core.py ../../data/Sentinel-1/00017_22007_Lagos templates/gpt_template_preprocessing_lee_KML_UTM.xml UN_city_list_rect_buff.kml
-
-python geocoding_core.py ../../data/Sentinel-1/00017_22007_Lagos templates/gpt_template_preprocessing_unfilt_KML_UTM.xml  UN_city_list_rect_buff.kml
- 
+python geocoding_core.py ../../data/Sentinel-1/00017_22007_Lagos templates/gpt_template_preprocessing_unfilt_KML_UTM.xml  UN_city_list_rect_buff.kml 
 python mosaic_core.py ../../data/Sentinel-1/00017_22007_Lagos gpt_template_preprocessing_lee_KML_UTM.xml UN_city_list_rect_buff.kml
-
 python mosaic_core.py ../../data/Sentinel-1/00017_22007_Lagos gpt_template_preprocessing_unfilt_KML_UTM.xml UN_city_list_rect_buff.kml
 
-## Orbit issue
+## Issue of accessing orbit file
 Currently (01.06.2021) Sentinel-1 orbit file is not automatically accessible via ESA SNAP. Details about this issue are extensively discussed in the [SNAP forum](https://forum.step.esa.int/t/orbit-file-timeout-march-2021/28621/178). In the discussion, one bypass solution is to download the orbit file from the [website](https://scihub.copernicus.eu/gnss/#/home) and put the files into the folder associated with the same month of the year in this path: /home/user/.snap/auxdata/Orbits/Sentinel-1/POEORB
 
 
