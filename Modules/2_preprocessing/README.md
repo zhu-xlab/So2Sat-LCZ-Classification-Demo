@@ -1,6 +1,10 @@
 # Sentinel-1 Preprocessing
 ## Simple running
-sentinel_1_processing.py runs a Sentinel-1 data preprocessing pipeline by calling graphic processing tool (gpt) of ESA SNAP toolbox. It delivers two data images. One has speckle, the other one had speckle reduction with LEE filter. The processing chains are as follows:
+"python sentinel_1_processing.py" 
+
+Before running, one needs to install ESA SNAP toolbox and set the directory to ESA SNAP GPT at line 10 of "sentinel_1_processing.py"
+
+It runs a Sentinel-1 data preprocessing pipeline by calling graphic processing tool (gpt) of ESA SNAP toolbox. It delivers two data images. One has speckle, the other one had speckle reduction with LEE filter. The processing chains are as follows:
 
 "Apply orbit file, calibration, deburst, terrain correction, roi cropping, and mosaic (if necessary)"
 
