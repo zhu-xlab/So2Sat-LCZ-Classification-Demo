@@ -1,7 +1,3 @@
-'''
-26.08.2020. by Jingliang Hu
-'''
-
 # python library for Sentinel-1 data download
 1. Create a new conda environment by command "conda create --name sipeo_so2sat_demo python"
 2. Start the env by command "source activate sipeo_so2sat_demo"
