@@ -1,5 +1,7 @@
 # So2Sat LCZ Classification Demo
 This repository provides a demo that produces local climate zone classification maps using Sentinel-1 and Sentinel-2 data. This is a part of an European Research Council (ERC) starting grand project "So2Sat" [So2Sat page](http://www.so2sat.eu/).
+![vancouver lcz map](https://github.com/zhu-xlab/So2Sat-LCZ-Classification-Demo/blob/master/data/MAP/Sentinel-2/lcz_vancouver.png)
+
 
 # Quick introduction
 ## Environment setting
