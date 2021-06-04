@@ -2,8 +2,6 @@
 ## Simple running
 "python sentinel_1_processing.py" 
 
-Before running, one needs to install ESA SNAP toolbox and set the directory to ESA SNAP GPT at line 10 of "sentinel_1_processing.py"
-
 ## Processing pipeline
 It runs a Sentinel-1 data preprocessing pipeline by calling graphic processing tool (gpt) of ESA SNAP toolbox. It delivers two data images. One has speckle, the other one had speckle reduction with LEE filter. The processing chains are as follows:
 
@@ -26,8 +24,12 @@ python mosaic_core.py ../../data/Sentinel-1/00017_22007_Lagos gpt_template_prepr
 
 python mosaic_core.py ../../data/Sentinel-1/00017_22007_Lagos gpt_template_preprocessing_unfilt_KML_UTM.xml UN_city_list_rect_buff.kml
 
-## Issue of accessing orbit file
+## Requirement and possible issue
+Before running, one needs to install [ESA SNAP toolbox](https://step.esa.int/main/download/snap-download/) and set the directory to ESA SNAP GPT (e.g. ~/snap/bin/gpt) at line 10 of "sentinel_1_processing.py"
+
 Currently (01.06.2021) Sentinel-1 orbit file is not automatically accessible via ESA SNAP. Details about this issue are extensively discussed in the [SNAP forum](https://forum.step.esa.int/t/orbit-file-timeout-march-2021/28621/178). In the discussion, one bypass solution is to download the orbit file from the [website](https://scihub.copernicus.eu/gnss/#/home) and put the files into the folder associated with the same month of the year in this path: /home/user/.snap/auxdata/Orbits/Sentinel-1/POEORB
+
+The pre-processing might has an issue accessing DEM for terrain correction. Two tricks are helpful for us. One is installing the latest SNAP toolbox. The other is changing SRTM 3Sec to SRTM 1Sec HGT or other options.
 
 
 # Sentine-2 Preprocessing
