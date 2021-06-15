@@ -18,7 +18,9 @@ python library for Sentinel-1 data download
 > source activate sipeo_so2sat_demo
 3. Install gdal and check
 > conda install gdal 
+>
 > python
+
 > from osgeo import ogr,osr,gdal
 4. Install shapely and check
 > conda install shapely
