@@ -12,7 +12,7 @@ import osr
 import gdal
 import numpy as np
 import sys
-sys.path.insert(1, '../Classification')
+sys.path.insert(1, '../3_classification')
 
 import sen1_cnntrain_uil as sen1cnn
 import glob2
