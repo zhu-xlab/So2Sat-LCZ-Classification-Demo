@@ -1,20 +1,34 @@
-# python library for Sentinel-1 data download
-1. Create a new conda environment by command "conda create --name sipeo_so2sat_demo python"
-2. Start the env by command "source activate sipeo_so2sat_demo"
-3. Install gdal by command "conda install gdal"; Start python and use "from osgeo import ogr,osr,gdal" to check whether the installation is success or not
-4. Install shapely by command "conda install shapely"; Installation check "from shapely.wkt import loads"
-5. Install sentinelsat by command "pip install sentinelsat"; Installation check "import sentinelsat"
-6. Install pandas by command "conda install pandas"; Installation check "import pandas as pd"
+# Environment setting
+This demo has been tested in a conda environment. The following steps create an identical conda environment as ours.
+## Step 1: Install anaconda
+[Please refer to anaconda documentation](https://docs.anaconda.com/anaconda/install/)
+## Step 2: Create an identical conda env as ours
+1. More to directory "Conda-Env"
+2. Create env from yml file. One can change the name of the env by changing the first line of the file sipeo_so2sat_demo_env.yml
+> conda env create -f sipeo_so2sat_demo_env.yml
+3. Check the env
+> conda env list
 
 
-
-
-
-# Recreate an identical conda env with .yml file
-1. activate original env: 	source activate sipeo_so2sat_demo
-2. generate .yml file: 		conda env export > sipeo_so2sat_demo_env.yml
-
-3. create the identical env: 	conda env create -f sipeo_so2sat_demo_env.yml (change the first line of .yml file to change env name)
-4. check installation: 		conda env list
-
-
+# Extra (Not important)
+python library for Sentinel-1 data download
+1. Create a new conda environment 
+> conda create --name sipeo_so2sat_demo python
+2. Start the env
+> source activate sipeo_so2sat_demo
+3. Install gdal and check
+> conda install gdal 
+> python
+> from osgeo import ogr,osr,gdal
+4. Install shapely and check
+> conda install shapely
+> python
+> from shapely.wkt import loads"
+5. Install sentinelsat and check
+> pip install sentinelsat
+> python
+> import sentinelsat
+6. Install pandas and check
+> conda install pandas
+> python
+> import pandas as pd
