@@ -291,7 +291,7 @@ def roiLatlon2UTM(WGSPoint,outputEPSG=0):
     UTMPoints = np.zeros(WGSPoint.shape)
     for i in range(0,np.size(WGSPoint,axis=0)):
         p = ogr.Geometry(ogr.wkbPoint)
-        p.AddPoint(WGSPoint[i][0], WGSPoint[i][1])
+        p.AddPoint(WGSPoint[i][1], WGSPoint[i][0])
         p.Transform(coordTransform)
         UTMPoints[i][0] = p.GetX()
         UTMPoints[i][1] = p.GetY()
