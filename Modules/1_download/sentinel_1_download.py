@@ -36,7 +36,7 @@ password='sipeo_so2sat'
 cityrois = '../../data/ROI/UN_city_list_rect_buff.kml'
 # example city Lagos (One of the 1692 cities in the kml file). 
 # [population ranking]_[city ID]_[city name]
-cityname = ["00017_22007_Lagos", "00042_20480_Chengdu"]
+cityname = ["00017_22007_Lagos"]
 
 # Time period
 # Search data in three time periods: 
@@ -44,7 +44,7 @@ cityname = ["00017_22007_Lagos", "00042_20480_Chengdu"]
 # startDate = ["20170301","20170601","20170901"]
 # endDate   = ["20170331","20170630","20170930"]
 startDate = ["20210501"]
-endDate   = ["20210528"]
+endDate   = ["20210510"]
 
 # directory of data to be saved
 outdir = '../../data/Sentinel-1/'

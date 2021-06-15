@@ -10,7 +10,7 @@ import os
 os.environ['gpt'] = '/home/hu/snap/bin/gpt'
 
 # Take city lagos as an example
-city = '00042_20480_Chengdu'
+city = "00017_22007_Lagos"
 
 
 
