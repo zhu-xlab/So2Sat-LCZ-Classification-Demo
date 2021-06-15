@@ -20,9 +20,10 @@ import resnet_v2
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
 os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
 os.environ["TF_ENABLE_AUTO_MIXED_PRECISION"] = "1"
-config = tf.ConfigProto()
+#config = tf.ConfigProto()
+config = tf.compat.v1.ConfigProto()
 config.gpu_options.per_process_gpu_memory_fraction = 0.4
-session = tf.Session(config=config)
+#session = tf.Session(config=config)
 
 
 "set the path to the multi-seasonal s2 data"
