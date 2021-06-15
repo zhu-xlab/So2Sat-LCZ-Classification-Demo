@@ -13,13 +13,13 @@ dependencies:
   - brotlipy=0.7.0=py38h1e0a361_1000
   - bzip2=1.0.8=h7b6447c_0
   - c-ares=1.16.1=h516909a_3
-  - ca-certificates=2020.7.22=0
+  - ca-certificates=2021.5.25=h06a4308_1
   - cachetools=4.1.1=py_0
   - cairo=1.14.12=h8948797_3
-  - certifi=2020.6.20=py38_0
-  - cffi=1.14.3=py38h5bae8af_0
+  - certifi=2021.5.30=py38h06a4308_0
+  - cffi=1.14.1=py38h5bae8af_0
   - cfitsio=3.470=hb7c8383_2
-  - chardet=3.0.4=py38h32f6830_1007
+  - chardet=3.0.4=py38h32f6830_1006
   - click=7.1.2=pyh9f0ad1d_0
   - cryptography=3.1=py38h766eaa4_0
   - curl=7.67.0=hbc83047_0
@@ -33,8 +33,8 @@ dependencies:
   - geotiff=1.5.1=h21e8280_1
   - giflib=5.1.4=h14c3975_1
   - glib=2.63.1=h5a9c865_0
-  - glob2=0.7=py_0
-  - google-auth=1.21.2=py_0
+  - glob2=0.7=pyhd3eb1b0_0
+  - google-auth=1.21.1=py_0
   - google-auth-oauthlib=0.4.1=py_2
   - google-pasta=0.2.0=pyh8c360ce_0
   - grpcio=1.31.0=py38h2c89da0_0
@@ -83,7 +83,7 @@ dependencies:
   - numpy-base=1.19.1=py38hfa32c7d_0
   - oauthlib=3.0.1=py_0
   - openjpeg=2.3.0=h05c96fa_1
-  - openssl=1.1.1h=h7b6447c_0
+  - openssl=1.1.1k=h27cfd23_0
   - opt_einsum=3.3.0=py_0
   - pandas=1.1.1=py38he6710b0_0
   - pcre=8.44=he6710b0_0
@@ -139,5 +139,4 @@ dependencies:
     - html2text==2020.1.16
     - sentinelsat==0.14
     - tqdm==4.48.2
-prefix: /home/jingliang/software/anaconda2/envs/sipeo_so2sat_demo
-
+prefix: /home/hu/software/anaconda3.7/envs/sipeo_so2sat_demo
