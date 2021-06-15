@@ -16,7 +16,8 @@ This demo has been tested in a conda environment. The following steps create an 
 > conda env list
 
 ## Exemplary data
-Please download the exemplary data [here](ftp://ftp.lrz.de/transfer/temporary_data_storage/So2Sat_LCZ_Classification_Demo/), and place the directory "data" at the top level.
+Please download the exemplary data in the following link, and place the directory "data" at the top level.
+> ftp://ftp.lrz.de/transfer/temporary_data_storage/So2Sat_LCZ_Classification_Demo/
 
 ## Code organization
 The workflow of this demo consists of data downloading, data preprocessing, classification with trained model, and decision fusion. These four modules are in the directory "Modules"
