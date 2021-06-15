@@ -10,7 +10,7 @@ This demo has been tested in a conda environment. The following steps create an 
 > conda env list
 
 
-# Extra (Not important)
+### Extra (Not important)
 python library for Sentinel-1 data download
 1. Create a new conda environment 
 > conda create --name sipeo_so2sat_demo python
@@ -20,21 +20,24 @@ python library for Sentinel-1 data download
 > conda install gdal 
 >
 > python
-
+> 
 > from osgeo import ogr,osr,gdal
 4. Install shapely and check
 > conda install shapely
+> 
 > python
+> 
 > from shapely.wkt import loads"
 5. Install sentinelsat and check
 > pip install sentinelsat
+> 
 > python
+> 
 > import sentinelsat
 6. Install pandas and check
 > conda install pandas
+> 
 > python
+> 
 > import pandas as pd
 
-
-> I’ve always been more interested
-> in the future than in the past.
