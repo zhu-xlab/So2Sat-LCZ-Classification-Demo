@@ -6,8 +6,6 @@ keras:          conda install -c conda-forge keras
 python global_production.py ../../data/Sentinel-1/00017_22007_Lagos model/S1_RESNET20_BS32_LR1e-4_IN32-32-7_PRO52A-R10-GLOBAL_2019_06_22.h5
 
 
-
-
 # Sentinel-2 part
 LCZ classification from sentinel-2 images; multi-seasonal predictions are fused into one.
 The softmax probability of each season and the fused LCZ labels are saved into geotiff files.
@@ -28,4 +26,4 @@ The softmax probability of each season and the fused LCZ labels are saved into g
 
 ## Usage
 
-- `CUDA_VISIBLE_DEVICES=0 python sen2InferenceResNet20.py 'sampleData_So2Sat-LCZ-Classification-Demo/00017_22007_Lagos' 'sampleData_So2Sat-LCZ-Classification-Demo/S2_RESNET20_BS16_LR2e-4_IN32-32-10_PRO-52-0R12_2019-06-27T10:16:53+02:00.hdf5'`
+- `CUDA_VISIBLE_DEVICES=0 python sen2InferenceResNet20.py '../../data/Sentinel-2/00017_22007_Lagos' 'model/S2_RESNET20_BS16_LR2e-4_IN32-32-10_PRO-52-0R12_2019-06-27T10:16:53+02:00.hdf5'`
