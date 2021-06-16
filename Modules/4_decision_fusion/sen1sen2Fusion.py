@@ -35,7 +35,8 @@ path2Sen2OfCity = sys.argv[2]
 dataPathTime = sen1cnn.getPathOfTime(path2Sen1OfCity)
 dataPathTif = os.path.join(dataPathTime[0] ,'mosaic.tif')
 s1ProbTif = '/'.join(dataPathTif.split('/')[:-1])
-s1ProbTif = s1ProbTif.replace('mosaic_unfilt_dat','LCZClaMap')+'/'+'LCZProb.tif'
+# s1ProbTif = s1ProbTif.replace('mosaic_unfilt_dat','LCZClaMap')+'/'+'LCZProb.tif'
+s1ProbTif = s1ProbTif.replace('mosaic_unfilt_dat','LCZ_ResNet')+'/'+'LCZProb.tif'
 
 try:
     f = gdal.Open(s1ProbTif)
@@ -119,6 +120,8 @@ fusion_label = np.argmax(fusion_softmax,axis=0).astype(np.int16)+1
 6. save fusion results as geotiff
 """
 fusionDir = '/'.join(s1ProbTif.split('/')[:-3])+'/LCZ_Fusion/'+s1ProbTif.split('/')[-2]
+fusionDir = fusionDir.replace('/Sentinel-1/','/MAP/')
+print(fusionDir)
 if not os.path.exists(fusionDir):
     os.makedirs(fusionDir)
 
