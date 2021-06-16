@@ -223,6 +223,74 @@ def getCoordLCZGrid(lczPath):
 
 
 
+def initialLCZGrids_demo(tiffData):
+# this function initial a LCZ label grid and a LCZ probability grid.
+#    Input:
+#        - tiffData        -- path to sentinel-1 tiff data
+#                          -- EXAMPLE: tiffData = '/data/hu/global_processing/01692_22142_Katowice/geocoded_subset_unfilt_dat/201706/S1B_IW_SLC__1SDV_20170601T045205_20170601T045232_005852_00A42A_504B_Orb_Cal_Deb_TC_SUB.tif'
+#
+#    Output:
+#        - return 0        -- a LCZ tiff initialized
+#                          -- EXAMPLE:
+#
+    # number of bands, number of LCZ classes
+    nbBnd = 17
+
+    # read geoinformation from the sentinel-1 tiff data
+    dataFile = gdal.Open(tiffData)
+    dataCoordSys = np.array(dataFile.GetGeoTransform())
+    dataCol = dataFile.RasterXSize
+    dataRow = dataFile.RasterYSize
+
+    # set geoinformation for the output LCZ label grid
+    # set resolution and coordinate for upper-left point
+    LCZCoordSys = dataCoordSys.copy()
+    LCZCoordSys[1] = 100
+    LCZCoordSys[5] = -100
+    LCZCol = np.arange(dataCoordSys[0],dataCoordSys[0]+dataCol*dataCoordSys[1],LCZCoordSys[1]).shape[0]
+    LCZRow = np.arange(dataCoordSys[3],dataCoordSys[3]+dataRow*dataCoordSys[5],LCZCoordSys[5]).shape[0]
+
+    # set the directory of initial grid
+    savePath = '/'.join(tiffData.split('/')[:-1])
+    savePath = savePath.replace(tiffData.split('/')[-3],'LCZ_ResNet')
+    if not os.path.exists(savePath):
+        os.makedirs(savePath)
+
+    # initial the grid and set resolution, projection, and coordinate
+    LCZDriver = gdal.GetDriverByName('GTiff')
+    LCZTiffPath = savePath+'/LCZLabel.tif'
+    LCZFile = LCZDriver.Create(savePath+'/LCZLabel.tif', LCZCol, LCZRow)
+    LCZFile.SetProjection(dataFile.GetProjection())
+    LCZFile.SetGeoTransform(LCZCoordSys)
+
+    # save file with int zeros
+    LCZLabel = np.zeros((LCZRow,LCZCol),dtype = int)
+    outBand = LCZFile.GetRasterBand(1)
+    outBand.WriteArray(LCZLabel)
+    outBand.FlushCache()
+
+    del(LCZDriver)
+    del(LCZFile)
+    del(outBand)
+    del(LCZLabel)
+    # initial the grid and set resolution, projection, and coordinate
+    LCZDriver = gdal.GetDriverByName('GTiff')
+    LCZFile = LCZDriver.Create(savePath+'/LCZProb.tif', LCZCol, LCZRow, nbBnd)
+    LCZFile.SetProjection(dataFile.GetProjection())
+    LCZFile.SetGeoTransform(LCZCoordSys)
+
+    # save file with int zeros
+    LCZLabel = np.zeros((LCZRow,LCZCol))
+    idBnd = np.arange(0,nbBnd,dtype=int)
+    for idxBnd in idBnd:
+        outBand = LCZFile.GetRasterBand(int(idxBnd+1))
+        outBand.WriteArray(LCZLabel)
+        outBand.FlushCache()
+        del(outBand)
+    outputpath = [savePath+'/LCZLabel.tif',savePath+'/LCZProb.tif']
+
+    return outputpath
+
 
 
 

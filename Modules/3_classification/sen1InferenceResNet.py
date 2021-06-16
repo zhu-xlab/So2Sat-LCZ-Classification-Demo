@@ -76,7 +76,7 @@ dataPathTif = dataPathTime[0] +'/mosaic.tif'
 
 
 # initial classification map tiff file
-LCZPaths = gp.initialLCZGrids(dataPathTif)
+LCZPaths = gp.initialLCZGrids_demo(dataPathTif)
 # get patch coordinate
 coordCell = gp.getCoordLCZGrid(LCZPaths[0])
 coordImage = gp.getImageCoordByXYCoord(coordCell,dataPathTif)
