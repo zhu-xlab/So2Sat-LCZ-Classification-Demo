@@ -23,8 +23,8 @@ Please download the exemplary data in the following link, and place the director
 ## LCZ mapping workflow
 This part shows the LCZ mapping workflow with the example of city Lagos.
 ### 1. LCZ mapping with Sentinel-1
-Brower to Module/3_classification
-> cd Module/3_classification
+Brower to Modules/3_classification
+> cd Modules/3_classification
 
 Produce a classification map for 00017_22007_Lagos with a trained model and Sentinel-1 data
 > python sen1InferenceResNet.py ../../data/Sentinel-1/00017_22007_Lagos model/S1_RESNET20_BS32_LR1e-4_IN32-32-7_PRO52A-R10-GLOBAL_2019_06_22.h5
@@ -33,8 +33,8 @@ Produced classification map
 > ../../data/Sentinel-1/00017_22007_Lagos/LCZ_ResNet/[TIME]/LCZLabel.tif
 
 ### 2. LCZ mapping with Sentinel-2
-Brower to Module/3_classification
-> cd Module/3_classification
+Brower to Modules/3_classification
+> cd Modules/3_classification
 
 Produce a classification map for 00017_22007_Lagos with a trained model and multi-seasonal Sentinel-2 images
 The softmax probability of each season and the fused LCZ labels are saved into geotiff files.
@@ -44,8 +44,8 @@ Produced classification map
 > ../../data/Sentinel-2/00017_22007_Lagos/LCZ_ResNet20/00017_22007_Lagos_lab.tiff
 
 ### 3. LCZ mapping by fusing Sentinel-1 and Sentinel-2
-Brower to Module/4
-> cd Module/3_classification
+Brower to Modules/4_decision_fusion/
+> cd Modules/4_decision_fusion/
 
 Decision fusion:
 > python sen1sen2Fusion.py ../../data/Sentinel-1/00017_22007_Lagos ../../data/Sentinel-2/00017_22007_Lagos
