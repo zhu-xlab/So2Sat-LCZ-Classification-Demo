@@ -53,3 +53,9 @@ Decision fusion:
 Produced fusion map:
 > ../../data/MAP/00017_22007_Lagos/LCZ_Fusion/[TIME]/s1_s2_fusion.tif
 
+### 4. Extra: data downloading and processing
+Contents for data downloading can be found:
+> Modules/1_download
+
+Contents for data preprocessing can be found:
+> Modules/2_preprocessing
