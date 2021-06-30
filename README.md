@@ -54,8 +54,8 @@ python sen1sen2Fusion.py ../../data/Sentinel-1/00017_22007_Lagos ../../data/Sent
 ```
 
 ## Extra: Data downloading and processing
-Contents for data downloading can be found:
-> Modules/1_download
-
-Contents for data preprocessing can be found:
-> Modules/2_preprocessing
+Contents for data downloading and preprocessing can be found the following directory. Please refer to the README in those subdirectories for more details.
+```
+Modules/1_download
+Modules/2_preprocessing
+```
