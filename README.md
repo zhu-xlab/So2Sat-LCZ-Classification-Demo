@@ -1,14 +1,14 @@
 # So2Sat LCZ Classification Demo
 ## Introduction
-This repository provides a demo that produces local climate zone classification maps using Sentinel-1 and Sentinel-2 data with the model pre-trained by the So2Sat project team. This is a part of an European Research Council (ERC) starting grand project "So2Sat" [So2Sat page](http://www.so2sat.eu/).
-![vancouver lcz map](https://github.com/zhu-xlab/So2Sat-LCZ-Classification-Demo/blob/master/data/MAP/lcz_vancouver.png)
+This repository provides a demo that produces local climate zone classification maps using Sentinel-1 and Sentinel-2 data with the model pre-trained by the So2Sat project team. This is a part of an European Research Council (ERC) starting grand project ["So2Sat"](http://www.so2sat.eu/).
 
+<img src="data/MAP/lcz_vancouver.png" width="600" alt="vancouver lcz map">
 Figure: local climate zone map of the city Vancouver
 
 ## Environment setting
 This demo has been tested in a conda environment. The following steps create an identical conda environment as ours.
 ### Step 1: Install conda (version 4.9.1, where the code were tested)
-[Please refer to anaconda documentation](https://docs.anaconda.com/anaconda/install/)
+[Please refer to the anaconda documentation](https://docs.anaconda.com/anaconda/install/)
 ### Step 2: Create the conda env
 ```bash
 cd Conda-Env
@@ -17,8 +17,8 @@ conda env list #Check the env
 ```
 
 ## Exemplary data
-Please download the exemplary data in the following link, and place the directory "data" at the top level.
-> ftp://ftp.lrz.de/transfer/temporary_data_storage/So2Sat_LCZ_Classification_Demo/
+Please download the exemplary data from the following link, and replace the directory "data".
+> https://syncandshare.lrz.de/getlink/fiYCB4tz8yGrXaZnoTVqufTb/data.zip
 
 ## LCZ mapping workflow
 This part shows the LCZ mapping workflow with the example of city Lagos.
