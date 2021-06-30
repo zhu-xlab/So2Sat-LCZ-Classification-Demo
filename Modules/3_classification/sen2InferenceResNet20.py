@@ -47,7 +47,7 @@ batch_size = 256
 image2processed=sen2cnn.createFileList(path2DataOfCity) ;
 numImg=len(image2processed)
 print("INFO:    Number of seasonal images: ", numImg)
-print(numImg)
+# print(numImg)
 
 if numImg==0:
 	sys.exit("no images found!")
