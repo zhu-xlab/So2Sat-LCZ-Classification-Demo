@@ -69,7 +69,7 @@ def dataOfCityList(cityList,dataStorePath):
                     break
                 elif j == len(dataOfCity)-1:
                     print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-                    print("WORMING:")
+                    print("WARNING:")
                     print('Data for city of '+cityList[i]+' not found')
                     print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
@@ -82,7 +82,7 @@ def dataOfCityList(cityList,dataStorePath):
                 break
             elif j == len(dataOfCity)-1:
                 print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-                print("WORMING:")
+                print("WARNING:")
                 print('Data for city of '+cityList+' not found')
                 print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
     else:
