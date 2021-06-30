@@ -8,6 +8,7 @@ os.environ['gpt'] = '~/snap/bin/gpt'
 ### Step 2. Orbit profile
 Automatic downloading of orbit profiles might be an issue. In this case, we prepared the orbit data for city Lagos. 
 ```
+mkdir ~/.snap/auxdata/Orbits/Sentinel-1/POEORB/S1A/2021/05
 cp data/Sentinel-1/00017_22007_Lagos/orbit_profile/S1A_OPER_AUX_POEORB_OPOD_20210528T121723_V20210507T225942_20210509T005942.EOF ~/.snap/auxdata/Orbits/Sentinel-1/POEORB/S1A/2021/05
 ```
 One can also download orbit profiles [here](https://scihub.copernicus.eu/gnss/#/home) when necessary.
