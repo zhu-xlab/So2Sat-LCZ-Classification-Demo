@@ -43,7 +43,7 @@ CUDA_VISIBLE_DEVICES=0 python sen2InferenceResNet20.py '../../data/Sentinel-2/00
 #Produced classification map ../../data/Sentinel-2/00017_22007_Lagos/LCZ_ResNet20/00017_22007_Lagos_lab.tiff
 ```
 
-### Step 3. LCZ mapping by fusing Sentinel-1 and Sentinel-2
+### Step 3. Fusing the results of Sentinel-1 and Sentinel-2
 ```bash
 cd Modules/4_decision_fusion/ #Browse to Modules/4_decision_fusion/
 
