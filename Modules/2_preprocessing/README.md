@@ -1,6 +1,8 @@
 # Sentinel-1 Preprocessing
-## Simple running
-"python sentinel_1_processing.py" 
+## How to run
+```bash
+python sentinel_1_processing.py
+```
 
 ## Processing pipeline
 It runs a Sentinel-1 data preprocessing pipeline by calling graphic processing tool (gpt) of ESA SNAP toolbox. It delivers two data images. One has speckle, the other one had speckle reduction with LEE filter. The processing chains are as follows:
