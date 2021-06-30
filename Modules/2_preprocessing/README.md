@@ -1,10 +1,21 @@
 # Sentinel-1 Preprocessing
 ## How to run
+### Step 1. Set path to ESA SNAP GPT
+One needs to install [ESA SNAP toolbox](https://step.esa.int/main/download/snap-download/) and set the directory of ESA SNAP GPT (e.g. ~/snap/bin/gpt) at line 10 of "sentinel_1_processing.py"
+```
+os.environ['gpt'] = '~/snap/bin/gpt'
+```
+### Step 2. Orbit profile
+Automatic downloading of orbit profiles might be an issue. In this case, we prepared the orbit data for city Lagos. 
+```
+cp data/Sentinel-1/00017_22007_Lagos/orbit_profile/S1A_OPER_AUX_POEORB_OPOD_20210528T121723_V20210507T225942_20210509T005942.EOF ~/.snap/auxdata/Orbits/Sentinel-1/POEORB/S1A/2021/05
+```
+One can also download orbit profiles [here](https://scihub.copernicus.eu/gnss/#/home) when necessary.
+### Step 3. Run the processing script
 ```bash
 python sentinel_1_processing.py
 ```
 ```bash
-
 #sentinel_1_processing.py basically calls the following functions:
 python geocoding_core.py ../../data/Sentinel-1/00017_22007_Lagos templates/gpt_template_preprocessing_lee_KML_UTM.xml UN_city_list_rect_buff.kml
 python geocoding_core.py ../../data/Sentinel-1/00017_22007_Lagos templates/gpt_template_preprocessing_unfilt_KML_UTM.xml  UN_city_list_rect_buff.kml 
