@@ -43,7 +43,12 @@ Currently (01.06.2021) Sentinel-1 orbit file is not automatically accessible via
 The pre-processing might has an issue accessing DEM for terrain correction. Two tricks are helpful for us. One is installing the latest SNAP toolbox. The other is changing SRTM 3Sec to SRTM 1Sec HGT or other options.
 
 # Sentinel-2 Preprocessing
-The Sentinel-2 images have to be reprojected to the same WGS84/UTM zone as the Sentinel-1 data.
+The Sentinel-2 images are downloaded as cloud free images aggregated over three months. Details are in the following paper
+> Schmitt, Michael, et al. "Aggregating cloud-free Sentinel-2 images with Google earth engine." PIA19: Photogrammetric Image Analysis (2019): 145-152.
+
+Sentinel-2 images are then reprojected to the same WGS84/UTM zone as the Sentinel-1 data.
+
+
 <!---  COMMENT OUT
 # Sentine-2 Preprocessing
 Resample sentinel-2 images from wgs84 to utm;
