@@ -7,7 +7,7 @@ Figure: local climate zone map of the city Vancouver
 
 ## Environment setting
 This demo has been tested in a conda environment. The following steps create an identical conda environment as ours.
-### Step 1: Install anaconda
+### Step 1: Install conda (version 4.9.1, where the code were tested)
 [Please refer to anaconda documentation](https://docs.anaconda.com/anaconda/install/)
 ### Step 2: Create an identical conda env as ours
 ```bash
