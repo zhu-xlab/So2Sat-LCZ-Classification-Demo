@@ -111,14 +111,14 @@ def saveLabel_fromSoftmax(labPred,tiffPath):
         print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
         sys.exit(1)
 
-    print(labPred.shape)
-    print(np.median(labPred[:]))
+    # print(labPred.shape)
+    # print(np.median(labPred[:]))
     prob = np.reshape(labPred,(row,col,17))
-    print(prob.shape)
-    print(np.median(prob[:]))
+    # print(prob.shape)
+    # print(np.median(prob[:]))
     lab = prob.argmax(axis=2).astype(np.uint8)+1
-    print(lab.shape)
-    print(np.median(lab[:]))
+    # print(lab.shape)
+    # print(np.median(lab[:]))
 
 
     LCZDriver = gdal.GetDriverByName('GTiff')
