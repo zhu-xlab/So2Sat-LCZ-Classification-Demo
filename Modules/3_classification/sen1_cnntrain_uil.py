@@ -262,8 +262,8 @@ def dBFeatStat(data,datamask):
     stat['max'] = np.max(temp)
     bins = np.arange(-60, 52, 3)
 
-    print(np.max(temp))
-    print(np.min(temp))
+    #print(np.max(temp))
+    #print(np.min(temp))
 
 
     freq,_ = np.histogram(temp,bins)
@@ -474,40 +474,40 @@ def getData(dataPath, featSelection = [0,0,0,0,0,0,0,0,0,0,0]):
 
         # convert intensity into dB, and normalization
         if featSelection[0]==1:
-            print(' unfiltered VH:')
+            #print(' unfiltered VH:')
             VH_dB_un, stat['VHdB'] = dBFeatStat(VH_dB_un,datamask)
         else:
             del(VH_dB_un)
 
         if featSelection[1]==1:
-            print(' unfiltered VV:')
+            #print(' unfiltered VV:')
             VV_dB_un, stat['VVdB'] = dBFeatStat(VV_dB_un,datamask)
         else:
             del(VV_dB_un)
 
         if featSelection[2]==1:
-            print(' boxcar coherence:')
+            #print(' boxcar coherence:')
             COH_boxcar, stat['coh'] = featStat(COH_boxcar,datamask)
         else:
             del(COH_boxcar)
 
         if featSelection[3]==1:
-            print(' VH real part:')
+            #print(' VH real part:')
             VH_real, stat['VH_real'] = realImagFeatStat(VH_real,datamask)
         else:
             del(VH_real)
         if featSelection[4]==1:
-            print(' VH imaginary part:')
+            #print(' VH imaginary part:')
             VH_imag, stat['VH_imag'] = realImagFeatStat(VH_imag,datamask)
         else:
             del(VH_imag)
         if featSelection[5]==1:
-            print(' VV real part:')
+            #print(' VV real part:')
             VV_real, stat['VV_real'] = realImagFeatStat(VV_real,datamask)
         else:
             del(VV_real)
         if featSelection[6]==1:
-            print(' VV imaginary part:')
+            #print(' VV imaginary part:')
             VV_imag, stat['VV_imag'] = realImagFeatStat(VV_imag,datamask)
         else:
             del(VV_imag)
@@ -533,13 +533,13 @@ def getData(dataPath, featSelection = [0,0,0,0,0,0,0,0,0,0,0]):
         data = np.stack((data[0,:,:],data[3,:,:],data[1,:,:],data[2,:,:]))
 
         if featSelection[7]==1:
-            print(' LEE filtered VH:')
+            #print(' LEE filtered VH:')
             VH_dB_lee, stat['VH_dB_lee'] = dBFeatStat(data[0,:,:],datamask)
         if featSelection[8]==1:
-            print(' LEE filtered VV:')
+            #print(' LEE filtered VV:')
             VV_dB_lee, stat['VV_dB_lee'] = dBFeatStat(data[1,:,:],datamask)
         if featSelection[9]==1:
-            print(' LEE coherence:')
+            #print(' LEE coherence:')
             COH_lee = np.sqrt(np.add(np.square(data[2,:,:]),np.square(data[3,:,:])))/np.sqrt(data[1,:,:]*data[0,:,:])
             COH_lee, stat['COH_lee'] = featStat(COH_lee,datamask)
         if featSelection[10]==1:
@@ -694,7 +694,7 @@ def getDataNormMStd(dataPath, featSelection = [0,0,0,0,0,0,0,0,0,0,0]):
     # generate data mask from lee-filtered data
     maskPath = dataPath.replace('unfilt_','')
     try:
-        print(maskPath)
+        #print(maskPath)
         maskTif = gdal.Open(maskPath)
     except RuntimeError as e:
         print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
@@ -753,40 +753,40 @@ def getDataNormMStd(dataPath, featSelection = [0,0,0,0,0,0,0,0,0,0,0]):
 
         # convert intensity into dB, and normalization
         if featSelection[0]==1:
-            print(' unfiltered VH:')
+            #print(' unfiltered VH:')
             VH_dB_un, stat['VHdB'] = dBFeatStat(VH_dB_un,datamask)
         else:
             del(VH_dB_un)
 
         if featSelection[1]==1:
-            print(' unfiltered VV:')
+            #print(' unfiltered VV:')
             VV_dB_un, stat['VVdB'] = dBFeatStat(VV_dB_un,datamask)
         else:
             del(VV_dB_un)
 
         if featSelection[2]==1:
-            print(' boxcar coherence:')
+            #print(' boxcar coherence:')
             COH_boxcar, stat['coh'] = featStat(COH_boxcar,datamask)
         else:
             del(COH_boxcar)
 
         if featSelection[3]==1:
-            print(' VH real part:')
+            #print(' VH real part:')
             VH_real, stat['VH_real'] = realImagFeatStat(VH_real,datamask)
         else:
             del(VH_real)
         if featSelection[4]==1:
-            print(' VH imaginary part:')
+            #print(' VH imaginary part:')
             VH_imag, stat['VH_imag'] = realImagFeatStat(VH_imag,datamask)
         else:
             del(VH_imag)
         if featSelection[5]==1:
-            print(' VV real part:')
+            #print(' VV real part:')
             VV_real, stat['VV_real'] = realImagFeatStat(VV_real,datamask)
         else:
             del(VV_real)
         if featSelection[6]==1:
-            print(' VV imaginary part:')
+            #print(' VV imaginary part:')
             VV_imag, stat['VV_imag'] = realImagFeatStat(VV_imag,datamask)
         else:
             del(VV_imag)
@@ -812,13 +812,13 @@ def getDataNormMStd(dataPath, featSelection = [0,0,0,0,0,0,0,0,0,0,0]):
         data = np.stack((data[0,:,:],data[3,:,:],data[1,:,:],data[2,:,:]))
 
         if featSelection[7]==1:
-            print(' LEE filtered VH:')
+            #print(' LEE filtered VH:')
             VH_dB_lee, stat['VH_dB_lee'] = dBFeatStat(data[0,:,:],datamask)
         if featSelection[8]==1:
-            print(' LEE filtered VV:')
+            #print(' LEE filtered VV:')
             VV_dB_lee, stat['VV_dB_lee'] = dBFeatStat(data[1,:,:],datamask)
         if featSelection[9]==1:
-            print(' LEE coherence:')
+            #print(' LEE coherence:')
             COH_lee = np.sqrt(np.add(np.square(data[2,:,:]),np.square(data[3,:,:])))/np.sqrt(data[1,:,:]*data[0,:,:])
             COH_lee, stat['COH_lee'] = featStat(COH_lee,datamask)
         if featSelection[10]==1:

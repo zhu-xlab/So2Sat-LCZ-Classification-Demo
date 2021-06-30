@@ -37,14 +37,14 @@ def saveProbabilityPrediction(probPred,tiffPath):
         print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
         sys.exit(1)
 
-    print(np.median(probPred[:]))
+    #print(np.median(probPred[:]))
     probPred = np.array(probPred*1e4)
-    print(np.median(probPred[:]))
+    #print(np.median(probPred[:]))
     probPred = probPred.astype(np.int16)
-    print(np.median(probPred[:]))
-    print(probPred.shape)
+    #print(np.median(probPred[:]))
+    #print(probPred.shape)
     prob = np.transpose(np.reshape(probPred,(row,col,17)),(2,0,1))
-    print(probPred.shape)
+    #print(probPred.shape)
 
 
     LCZDriver = gdal.GetDriverByName('GTiff')

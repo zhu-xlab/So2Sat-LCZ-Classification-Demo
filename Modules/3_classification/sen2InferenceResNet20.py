@@ -60,7 +60,7 @@ for idSeason in np.arange(numImg):
 
     outProbTif = path2DataOfCity+'/LCZ_ResNet20/'+city+dataPathTif[dataPathTif.rfind('_'):-4]+'_pro.tiff'
     outLabelTif = outProbTif.replace('_pro','_lab')
-    print('The directories of output:')
+    print('INFO:    The classification map: {}'.format(outLabelTif))
     #print(outProbTif)
     #print(outLabelTif)
 
