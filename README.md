@@ -9,7 +9,7 @@ Figure: local climate zone map of the city Vancouver
 This demo has been tested in a conda environment. The following steps create an identical conda environment as ours.
 ### Step 1: Install conda (version 4.9.1, where the code were tested)
 [Please refer to anaconda documentation](https://docs.anaconda.com/anaconda/install/)
-### Step 2: Create an identical conda env as ours
+### Step 2: Create the conda env
 ```bash
 cd Conda-Env
 conda env create -f sipeo_so2sat_demo_env.yml #Create env from yml file
