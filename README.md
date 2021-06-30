@@ -13,7 +13,7 @@ This demo has been tested in a conda environment. The following steps create an 
 ```bash
 cd Conda-Env
 conda env create -f sipeo_so2sat_demo_env.yml #Create env from yml file
-conda env list #Check the env
+conda activate sipeo_so2sat_demo #activate the conda env
 ```
 
 ## Exemplary data
