@@ -43,7 +43,7 @@ The pre-processing might has an issue accessing DEM for terrain correction. Two 
 
 
 # Sentine-2 Preprocessing
-Resample sentinel-2 images from wgs84 to utm;
+<Resample sentinel-2 images from wgs84 to utm;
 the utm projection is calculated from the ROI file in kml format
 # Sample data
 https://drive.google.com/drive/folders/1vs_eb3eBGzrk9m75gPEAOCtAzlRUv2BW?usp=sharing
@@ -63,4 +63,4 @@ https://drive.google.com/drive/folders/1vs_eb3eBGzrk9m75gPEAOCtAzlRUv2BW?usp=sha
 
 - call examples: absolutePath/project2utm_s2.sh folder4save
 
-`XXX/So2Sat-LCZ-Classification-Demo/Modules/Pre-processing/project2utm_s2.sh /home/qiu/CodeSummary/img2map/resampleData_projection_s2/utmImage`
+`XXX/So2Sat-LCZ-Classification-Demo/Modules/Pre-processing/project2utm_s2.sh /home/qiu/CodeSummary/img2map/resampleData_projection_s2/utmImage`>
