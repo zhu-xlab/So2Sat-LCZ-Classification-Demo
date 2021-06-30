@@ -5,8 +5,8 @@ One needs to install [ESA SNAP toolbox](https://step.esa.int/main/download/snap-
 ```
 os.environ['gpt'] = '~/snap/bin/gpt'
 ```
-### Step 2. Orbit profile
-Automatic downloading of orbit profiles might be an issue. In this case, we prepared the orbit data for city Lagos. 
+### Step 2. Manually copy orbit profile to SNAP directory
+Automatic downloading of orbit profiles might be an issue in SNAP. Therefore, we have included the orbit data for city Lagos in the sample data. 
 ```
 mkdir ~/.snap/auxdata/Orbits/Sentinel-1/POEORB/S1A/2021/05
 cp data/Sentinel-1/00017_22007_Lagos/orbit_profile/S1A_OPER_AUX_POEORB_OPOD_20210528T121723_V20210507T225942_20210509T005942.EOF ~/.snap/auxdata/Orbits/Sentinel-1/POEORB/S1A/2021/05
@@ -43,7 +43,7 @@ Currently (01.06.2021) Sentinel-1 orbit file is not automatically accessible via
 The pre-processing might has an issue accessing DEM for terrain correction. Two tricks are helpful for us. One is installing the latest SNAP toolbox. The other is changing SRTM 3Sec to SRTM 1Sec HGT or other options.
 
 # Sentinel-2 Preprocessing
-The Sentinel-2 images are downloaded as cloud free images aggregated over three months. Details are in the following paper
+The Sentinel-2 images are downloaded as cloud free images aggregated over three months. Details are in the following paper.
 > Schmitt, Michael, et al. "Aggregating cloud-free Sentinel-2 images with Google earth engine." PIA19: Photogrammetric Image Analysis (2019): 145-152.
 
 Sentinel-2 images are then reprojected to the same WGS84/UTM zone as the Sentinel-1 data.
