@@ -17,7 +17,7 @@ This repository provides the analysis-ready Sentinel-1 and Sentinel-2 images and
 <img src="data/MAP/lcz_vancouver.png" width="600" alt="vancouver lcz map">
 Figure: local climate zone map of the city Vancouver
 
-## Download the analysis-ready Sentinel-1, Sentinel-2 images, and the processed Locao Climate Zones map of 1692 cities
+## Download the analysis-ready Sentinel-1, Sentinel-2 images, and the LCZ maps of 1692 cities
 Coming soon ...
 
 ## Training data 
