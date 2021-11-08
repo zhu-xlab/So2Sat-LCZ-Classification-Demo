@@ -1,10 +1,30 @@
-# So2Sat LCZ Classification Demo
+# So2Sat GUL - *So2Sat Global Urban LCZ*
 ## Introduction
-This repository provides a demo that produces local climate zone classification maps using Sentinel-1 and Sentinel-2 data with the model pre-trained by the So2Sat project team. This is a part of an European Research Council (ERC) starting grand project ["So2Sat"](http://www.so2sat.eu/).
+This repository provides the analysis-ready Sentinel-1 and Sentinel-2 images and the corresponding local climate zones classification maps of 1692 cities whose population is larger than 300,000 according to the UN's World Prbanization Prospects: The 2014 Revision. The LCZ maps were predicted using deep learning and our pre-trained models in the So2Sat project, which is an European Research Council (ERC) starting grant ["So2Sat"](http://www.so2sat.eu/). Citation:
+
+```bibtex
+@article{zhu_so2sat_2021,
+        title = {The Urban Morphology on Our Planet - Global perspectives from Space},
+        volume = {pp},
+        journal = {Remote Sensing of Environment},
+        issn = {0034-4257},
+        author = {Zhu, X. X. and Qiu, C. and Hu, J. and Shi, Y. and Wang, Y. and Schmitt, M. and Hannes Taubenböck},
+        month = November,
+        year = {2021},
+}
+```
 
 <img src="data/MAP/lcz_vancouver.png" width="600" alt="vancouver lcz map">
 Figure: local climate zone map of the city Vancouver
 
+## Download the analysis-ready Sentinel-1, Sentinel-2 images, and the processed Locao Climate Zones map of 1692 cities
+Coming soon ...
+
+## Training data 
+Please refer to this page
+> https://github.com/zhu-xlab/So2Sat-LCZ42
+
+# Running a demo using our pre-trained model
 ## Environment setting
 This demo has been tested in a conda environment. The following steps create an identical conda environment as ours.
 ### Step 1: Install conda (version 4.9.1, where the code were tested)
@@ -27,7 +47,7 @@ This part shows the LCZ mapping workflow with the example of city Lagos.
 cd Modules/3_classification #Browse to Modules/3_classification
 
 #Produce a classification map for 00017_22007_Lagos with a trained model and Sentinel-1 data
-python sen1InferenceResNet.py ../../data/Sentinel-1/00017_22007_Lagos model/S1_RESNET20_BS32_LR1e-4_IN32-32-7_PRO52A-R10-GLOBAL_2019_06_22.h5
+python sen1InferenceResNet.py ../../data/Sentinel-1/00017_22007_Lagos model/S1_RESNET20_BS32_LR1e-4_IN32-32-7_PRO52A-R10-GLOBAL_2019-06-22.h5
 
 #Produced classification map in ../../data/Sentinel-1/00017_22007_Lagos/LCZ_ResNet/[TIME]/LCZLabel.tif
 ```
@@ -38,7 +58,7 @@ cd Modules/3_classification #Browse to Modules/3_classification
 
 #Produce a classification map for 00017_22007_Lagos with a trained model and multi-seasonal Sentinel-2 images
 #The softmax probability of each season and the fused LCZ labels are saved into geotiff files.
-CUDA_VISIBLE_DEVICES=0 python sen2InferenceResNet20.py '../../data/Sentinel-2/00017_22007_Lagos' 'model/S2_RESNET20_BS16_LR2e-4_IN32-32-10_PRO-52-0R12_2019-06-27T10:16:53+02:00.hdf5'
+CUDA_VISIBLE_DEVICES=0 python sen2InferenceResNet20.py '../../data/Sentinel-2/00017_22007_Lagos' 'model/S2_RESNET20_BS16_LR2e-4_IN32-32-10_PRO-52-0R12_2019-06-27.h5'
 
 #Produced classification map ../../data/Sentinel-2/00017_22007_Lagos/LCZ_ResNet20/00017_22007_Lagos_lab.tiff
 ```
